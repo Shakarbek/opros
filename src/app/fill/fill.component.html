@@ -1,0 +1,80 @@
+<h1>Time Ellapsed : {{timeEllapsed}}</h1>
+<h1>Duration : {{parseTime(duration)}}</h1>
+
+
+<mat-vertical-stepper #stepper (selectionChange)="($event)" (click)="left()">
+  <mat-step >
+    <ng-template matStepLabel>First question</ng-template>
+    <mat-label>
+      <h3>Time left: {{timeLeft}} sec</h3>
+      <h3>
+        Which social media platform came out in 2003?
+      </h3>
+      
+      <input type = "radio" class = 'first' name = 'ans1' (click) = "changeRadio($event)" value = "Myspace">Myspace
+      <input type = "radio" class = 'first' name = 'ans1' (click) = "changeRadio($event)" value = "Twitter">Twitter
+      <input type = "radio" class = 'first' name = 'ans1' (click) = "changeRadio($event)" value = "bitcoin">bitcoin
+      <input type = "radio" class = 'first' name = 'ans1' (click) = "changeRadio($event)" value = "worm">worm
+
+    </mat-label>
+    <div>
+      <button mat-button matStepperNext class="next">Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Second question</ng-template>
+    <mat-label>
+      <h3>Time left: {{timeLeft}} sec</h3>
+      <h3>
+        The Powerpuff Girls are 3 distinct colors. What are they?
+      </h3>
+
+      <input type = "checkbox" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Red">Red
+      <input type = "checkbox" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Green">Green
+      <input type = "checkbox" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Yellow">Yellow
+      <input type = "checkbox" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Blue">Blue
+
+    </mat-label>
+    <div>
+      <button mat-button matStepperNext class="next">Next</button>
+    </div>
+  </mat-step>
+  <mat-step onclick="left()">
+    <ng-template matStepLabel>Third question</ng-template>
+    <mat-label>
+      <h3>Time left: {{timeLeft}} sec</h3>
+      <h3>
+        What was the first capital of the United States?
+      </h3>
+
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Washington, D.C.">Washington, D.C.
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Richmond">Richmond
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Boston">Boston
+      <input type = "radio" class = 'first' name = 'ans2' (click) = "changeRadio($event)" value = "Philadelphia">Philadelphia
+
+    </mat-label>
+    <div>
+      <button mat-button matStepperNext class="next">Next</button>
+    </div>
+  </mat-step>
+  <mat-step >
+    <ng-template matStepLabel>Fourth question</ng-template>
+    <mat-label>
+      <h3>Time left: {{timeLeft}} sec</h3>
+      <h3>
+        What does the term ‘Necurs’ represent, which was seen in news recently?
+      </h3>
+
+      <input type = "radio" class = 'first' name = 'ans4' (click) = "changeRadio($event)" value = "virus">virus
+      <input type = "radio" class = 'first' name = 'ans4' (click) = "changeRadio($event)" value = "botnet">botnet
+      <input type = "radio" class = 'first' name = 'ans4' (click) = "changeRadio($event)" value = "bitcoin">bitcoin
+      <input type = "radio" class = 'first' name = 'ans4' (click) = "changeRadio($event)" value = "Tumblr">Tumblr
+
+    </mat-label>
+
+  </mat-step>
+  
+</mat-vertical-stepper>
+
+<button type="submit" class="btn btn-danger btn-lg btn-block" onclick="submit()">Submit</button>
+<h2>Result:</h2>
